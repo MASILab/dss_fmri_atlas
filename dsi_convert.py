@@ -6,13 +6,11 @@ import os
 import os.path as op
 import nibabel as nb
 from dipy.core.geometry import cart2sphere
-from dipy.core.sphere import HemiSphere
-from dipy.direction import peak_directions
 import subprocess
-from scipy.io.matlab import loadmat, savemat
+from scipy.io.matlab import loadmat
 from tqdm import tqdm
 import re
-from adam_utils.nifti import reorient_to_ras
+from dss_atlas.utils import reorient_to_ras
 
 def popen_run(arg_list):
     cmd = subprocess.Popen(arg_list, stdout=subprocess.PIPE,
@@ -52,7 +50,7 @@ def dsistudio_to_mrtrix(fib_file, fa_file, odf_file, odf_type, dir_file=None, lp
         dir_file = "directions.txt"
     
     fibmat = loadmat(fib_file)
-    print(fibmat.keys())
+    print([k for k in fibmat.keys() if not k.startswith("odf")])
     dims = tuple(fibmat['dimension'].squeeze())
     directions = fibmat['odf_vertices'].T
     faces = fibmat['odf_faces'].T
@@ -84,7 +82,7 @@ def dsistudio_to_mrtrix(fib_file, fa_file, odf_file, odf_type, dir_file=None, lp
     odf_vars = [k for k in fibmat.keys() if re.match("odf\\d+", k)]
 
     valid_odfs = []
-    print(fibmat['dti_fa'].shape)
+    # print(fibmat['dti_fa'].shape)
     flat_mask = (fibmat["dti_fa"].squeeze() > 0).flatten(order='F')
     n_voxels = np.prod(dims)
     for n in range(len(odf_vars)):
@@ -95,7 +93,7 @@ def dsistudio_to_mrtrix(fib_file, fa_file, odf_file, odf_type, dir_file=None, lp
         valid_odfs.append(odfs[:, odf_sum_mask].T)
     odf_array = np.row_stack(valid_odfs)
     odf_array = odf_array - odf_array.min(0)
-    print('ODF array shape: ', odf_array.shape, n_voxels, flat_mask.shape)
+    # print('ODF array shape: ', odf_array.shape, n_voxels, flat_mask.shape)
 
     # Convert each column to a 3d file, then concatenate them
     odfs_3d = []

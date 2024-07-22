@@ -4,6 +4,7 @@ from tqdm import tqdm
 import stripy
 from itertools import product
 from dipy.reconst.shm import real_sh_tournier, real_sh_descoteaux
+import nibabel as nib
 
 def cart2sphere(x, y, z):
     """Convert Cartesian coordinates to spherical coordinates (opposite convention as Dipy)"""
