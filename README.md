@@ -68,12 +68,12 @@ The code is released under the MIT License and the atlas is released under the [
 If you use the atlas in your research, please cite the following:
 
 DSS Atlas:
-```
+`
 Adam M. Saunders, Gaurav Rudravaram, Nancy R. Newlin, Michael E. Kim, Rose Herdejurgen, Bennett Landman, Yurui Gao. A 4D atlas of diffusion-informed spatial smoothing windows for BOLD signal in white matter. SPIE Medical Imaging 2024.
-```
+`
 
 HCP-1065 Young Adult Template:
-```
+`
 F.C. Yeh. Population-based tract-to-region connectome of the human brain and its hierarchical topology. Nature Communications, 2022. https://doi.org/10.1038/s41467-022-32595-4
-```
+`
 
