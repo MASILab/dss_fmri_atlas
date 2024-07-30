@@ -38,7 +38,7 @@ The white matter mask was generated using [UNesT](https://github.com/MASILab/UNe
 To use the filter, see the provided ```apply_dss_filter.py```. Note that the fMRI data should be deformably registered to the T1-weighted template for the HCP atlas.
 
 ```bash
-data_dir="/nfs/masi/saundam1/test"
+data_dir="/path/to/data/dir"
 odf_sh="$data_dir/odf_sh.nii.gz"
 wm_mask="$data_dir/wm_mask.nii.gz"
 input_fmri="$data_dir/fmri_reg_to_hcp.nii.gz"
