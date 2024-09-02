@@ -2,12 +2,12 @@
 Diffusion-informed spatial smoothing (DSS) atlas for functional magnetic resonance imaging (fMRI).
 
 There are three options for using the DSS atlas:
-1. [Containerized code with singularity (recommended)](#option-1-singularity-container)
+1. [Containerized code with Singularity (recommended)](#option-1-singularity-container)
 2. [Python code](#option-2-python-code)
 3. [Pregenerated filter windows](#option-3-pregenerated-filter-windows)
 
 ## Option 1: Singularity container
-We provide the Python code in a singularity container to apply the filter without setting up the environment.
+We provide the Python code in a Singularity container to apply the filter without setting up the environment.
 
 ### Download and installation
 **Download the Singularity image `dss_fmri_atlas.sif` from [https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj](https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj).**
