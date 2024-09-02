@@ -204,7 +204,7 @@ def create_sampling_template(n):
         Vertices of icosahedron to sample on sphere. Directed around z-axis.
     """
     fmesh = stripy.spherical_meshes.icosahedral_mesh(refinement_levels=5, include_face_points=False)
-    neighbors = get_neighbors(5)
+    neighbors = get_neighbors(n)
     solid_angle = 4*np.pi/len(neighbors)
     zdir = np.array([0.0, 0.0, 1.0])
 
