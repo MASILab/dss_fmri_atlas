@@ -27,7 +27,7 @@ singularity exec -ec \
     --input_t1w /INPUTS/t1w.nii.gz
 ```
 
-To apply the DSS filter (see `singularity exec /path/to/dss_fmri?atlas.sif apply_dss_filter.sh --help`):
+To apply the DSS filter (see `singularity exec /path/to/dss_fmri_atlas.sif apply_dss_filter.sh --help`):
 ```bash
 singularity exec -ec \
     -B /path/to/inputs:/INPUTS \
