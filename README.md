@@ -10,7 +10,7 @@ There are three options for using the DSS atlas:
 We provide the Python code in a Singularity container to apply the filter without setting up the environment.
 
 ### Download and installation
-**Download the Singularity image `dss_fmri_atlas.sif` from [https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj](https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj).**
+**Download the Singularity image `dss_fmri_atlas.sif` from [https://dss_fmri_atlas.projects.nitrc.org/](https://dss_fmri_atlas.projects.nitrc.org/).**
 
 We used [SingularityCE](https://github.com/sylabs/singularity) version 3.8.1. To use the container, download the image. There are two scripts provided. First, we register the fMRI data to the HCP-YA template. Second, we apply the DSS filter. We provide the scripts separately so that you can apply any preprocessing (regressing out CSF and motion parameters, applying filters to the time series, etc.) in HCP-YA space in between the two steps.
 
@@ -60,7 +60,7 @@ pip install .
 ### Download the DSS Atlas files
 Saving the individual filter windows is very large and applying the filter directly is computationally expensive. Instead, we provide the files and code to efficiently apply the DSS filter.
 
-**Download the ODFs represented as spherical harmonics `odf_sh.nii.gz`, T1-weighted image `t1w.nii.gz`, and white matter mask `wm_mask.nii.gz` from [https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj](https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj).**
+**Download the ODFs represented as spherical harmonics `odf_sh.nii.gz`, T1-weighted image `t1w.nii.gz`, and white matter mask `wm_mask.nii.gz` from [https://dss_fmri_atlas.projects.nitrc.org/](https://dss_fmri_atlas.projects.nitrc.org/).**
 
 The ODFs were generated from the [HCP-1065 Young Adult Fiber Template](https://brain.labsolver.org/hcp_template.html) labeled "1.25 mm with ODF". The file is provided as a DSI Studio .fib file, which can be converted using the ```scripts/dsi_convert.py``` (based on [https://github.com/mattcieslak/dmri_convert](https://github.com/mattcieslak/dmri_convert)):
 
@@ -105,7 +105,7 @@ python apply_dss_filter.py \
 ## Option 3: Pregenerated filter windows
 You can apply the filter windows directly instead of in the graph spectral domain, though this option is very computationally expensive.
 
-**Download the pregenerated filter windows `filt_windows.nii.gz` from [https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj](https://vanderbilt.box.com/s/spyatb6a0yhcxodxkva0ovjz2ktqa1lj).**
+**Download the pregenerated filter windows `filt_windows.nii.gz` from [https://dss_fmri_atlas.projects.nitrc.org/](https://dss_fmri_atlas.projects.nitrc.org/).**
 
 The filter windows were generated using ODFs generated from the [HCP-1065 Young Adult Fiber Template](https://brain.labsolver.org/hcp_template.html) labeled "1.25 mm with ODF". We used $n=5$, $\alpha=0.9$, and $\beta=50$. The filter windows are stored as a 125×151×108×1131 NIFTI file, where 1131 is the flattened filter window. You can reshape the final dimension into an 11×11×11 window centered at each voxel before using the filter. Note that the windows are unnormalized.
 
@@ -115,7 +115,6 @@ The white matter mask was generated using [UNesT](https://github.com/MASILab/UNe
 
 ## Citation
 The code is released under the MIT License and the atlas is released under the [WU-Minn HCP Consortium Open Access Data Use Terms](https://www.humanconnectome.org/study/hcp-young-adult/document/wu-minn-hcp-consortium-open-access-data-use-terms). You must acknowledge the following statement:
-
 
 > Data were provided [in part] by the Human Connectome Project, WU-Minn Consortium (Principal Investigators: David Van Essen and Kamil Ugurbil; 1U54MH091657) funded by the 16 NIH Institutes and Centers that support the NIH Blueprint for Neuroscience Research; and by the McDonnell Center for Systems Neuroscience at Washington University.
 
