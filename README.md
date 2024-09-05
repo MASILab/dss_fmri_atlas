@@ -1,7 +1,7 @@
 # DSS fMRI Atlas
 Diffusion-informed spatial smoothing (DSS) atlas for functional magnetic resonance imaging (fMRI).
 
-If you are working with white matter fMRI, the diffusion-informed spatial smoothing (DSS) atlas is a valuable tool for enhancing your preprocessing pipeline. White matter BOLD signals are weaker in power and anisotropically oriented, so the typical isotropic Gaussian smoothing applied to gray matter fMRI averages out much of the signal in the white matter. Abramian et al. introduced a graph signal processing approach to smooth white matter fMRI using smoothing windows shaped by diffusion information [https://doi.org/10.1016/j.neuroimage.2021.118095](https://doi.org/10.1016/j.neuroimage.2021.118095), but this method needs paired diffusion MRI and fMRI data.
+If you are working with white matter fMRI, the diffusion-informed spatial smoothing (DSS) atlas is a valuable tool for enhancing your preprocessing pipeline. White matter BOLD signals are weaker in power and anisotropically oriented, so the typical isotropic Gaussian smoothing applied to gray matter fMRI averages out much of the signal in the white matter. Abramian et al. introduced a graph signal processing approach to smooth white matter fMRI using smoothing windows shaped by diffusion information ([https://doi.org/10.1016/j.neuroimage.2021.118095](https://doi.org/10.1016/j.neuroimage.2021.118095)), but this method needs paired diffusion MRI and fMRI data.
 
 Here, we provide the DSS atlas to allow for anatomically-informed smoothing when diffusion information is not available, using information from the Human Connectome Project Young Adult population-averaged fiber orientation distribution functions.
 
