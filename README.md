@@ -1,6 +1,8 @@
 # DSS fMRI Atlas
 Diffusion-informed spatial smoothing (DSS) atlas for functional magnetic resonance imaging (fMRI).
 
+![dss_graphical_abstract](https://github.com/user-attachments/assets/71b45ecd-56ab-4f23-9dbc-21390953901a)
+
 If you are working with white matter fMRI, the diffusion-informed spatial smoothing (DSS) atlas is a valuable tool for enhancing your preprocessing pipeline. White matter BOLD signals are weaker in power and anisotropically oriented, so the typical isotropic Gaussian smoothing applied to gray matter fMRI averages out much of the signal in the white matter. Abramian et al. introduced a graph signal processing approach to smooth white matter fMRI using smoothing windows shaped by diffusion information ([https://doi.org/10.1016/j.neuroimage.2021.118095](https://doi.org/10.1016/j.neuroimage.2021.118095)), but this method needs paired diffusion MRI and fMRI data.
 
 Here, we provide the DSS atlas to allow for anatomically-informed smoothing when diffusion information is not available, using information from the Human Connectome Project Young Adult population-averaged fiber orientation distribution functions.
@@ -125,7 +127,7 @@ The code is released under the MIT License and the atlas is released under the [
 If you use the atlas in your research, please cite the following:
 
 DSS Atlas:
-> Adam M. Saunders, Gaurav Rudravaram, Nancy R. Newlin, Michael E. Kim, Rose Herdejurgen, Bennett Landman, Yurui Gao. A 4D atlas of diffusion-informed spatial smoothing windows for BOLD signal in white matter. SPIE Medical Imaging 2024 [submitted].
+> Adam M. Saunders, Michael E. Kim, Kurt G. Schilling, John C. Gore, Bennett A. Landman, and Yurui Gao. Vasculature-informed spatial smoothing of white matter functional magnetic resonance imaging. SPIE Medical Imaging: Image Processing, 2025, February, San Diego, California. https://doi.org/10.1117/12.3047240
 
 HCP-1065 Young Adult Template:
 > F.C. Yeh. Population-based tract-to-region connectome of the human brain and its hierarchical topology. Nature Communications, 2022. https://doi.org/10.1038/s41467-022-32595-4
